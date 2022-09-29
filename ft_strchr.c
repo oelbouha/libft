@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 16:43:39 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/29 18:59:52 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/29 11:19:27 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/29 13:22:30 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
-void * ft_memcpy(void * dst, const void * src, size_t n)
+char *	ft_strchr(const char *s, int c)
 {
 	int	i;
-	unsigned char	*d;
-	unsigned char	*s;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
 	i = 0;
-	while(i < n)
+	while(s[i])
 	{
-		d[i] = s[i];
+	   if (s[i] == c)
+		   return ((char*)&s[i]);
 		i++;
 	}
-	return (d);
+	return(NULL);
 }
-int main(int c, char **v)
+int main(void)
 {
-	char str[10] = "hello";
-	char str1[10] = "hi";
-	printf("%s\n", ft_memcpy(v[1], v[2], 3));
-	printf("%s", memcpy(v[3], v[4], 3));
+	char str[10] = "wwwhello";
+	printf("%s", ft_strchr(str, 'h'));
+	return (0);
 }

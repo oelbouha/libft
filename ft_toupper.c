@@ -6,7 +6,7 @@
 /*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:23:16 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/28 15:29:59 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:09:53 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 int	ft_toupper(int s)
 {
-		if (s >= 0 && s <= 9)
+		if (s >= 'a' && s <= 'z')
+			return (s - 32);
+		else 
+			return (s);
 }
 int main()
 {
-	printf("%d", ft_isdigit('g'));
+	printf("%c", ft_toupper('h'));
 }

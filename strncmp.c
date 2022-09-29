@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 16:43:39 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/29 18:59:52 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/29 12:21:47 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/29 12:28:34 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
-void * ft_memcpy(void * dst, const void * src, size_t n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	unsigned char	*d;
-	unsigned char	*s;
+	unsigned int	i;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
 	i = 0;
-	while(i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		d[i] = s[i];
-		i++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	i++;
 	}
-	return (d);
+	return (0);
 }
+#include <stdio.h>
 int main(int c, char **v)
 {
-	char str[10] = "hello";
-	char str1[10] = "hi";
-	printf("%s\n", ft_memcpy(v[1], v[2], 3));
-	printf("%s", memcpy(v[3], v[4], 3));
+	printf("%d", ft_strncmp(v[1], v[2], 5));
+	return (0);
 }
