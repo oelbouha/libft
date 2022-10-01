@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:23:16 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/29 11:09:53 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:49:41 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 17:41:45 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdio.h>
 
 int	ft_toupper(int s)
 {
-		if (s >= 'a' && s <= 'z')
-			return (s - 32);
-		else 
+		if (!(s >= 'a' && s <= 'z'))
 			return (s);
+		else 
+			return (s - 32);
 }
 int main()
 {

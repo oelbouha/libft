@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:48:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:48:48 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:38:16 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:38:35 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-char *	ft_strrchr(const char *s, int c)
+#include <string.h>
+
+char *	ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
+	int	j;
 
+	if (little == 0)
+		return ((char*)big);
 	i = 0;
-	while(s[i])
-		i++;
-	i--;
-	while(i >= 0)
+	while (big[i] && i < len)
 	{
-	   if (s[i] == c)
-		   return ((char*)&s[i]);
-		i--;
+		j = 0;
+		while(big[i + j] == little[j])
+			j++;
+			if (little[j] == '\0')
+				return ((char*)&big[i]);
+		i++;
 	}
-	return(NULL);
+	return (NULL);
 }
-int main(void)
+int main (int c, char **v)
 {
-	char str[100] = "wwwhellohiii";
-	printf("%s", ft_strrchr(str, 'h'));
-	return (0);
+	if (c == 3)
+	{
+	printf("%s\n", ft_strnstr(v[1], v[2], 10));
+	return 0;
+	}
 }

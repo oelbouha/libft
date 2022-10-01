@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:08:09 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/28 15:14:49 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:44:53 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:59:23 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdio.h>
 
 int	ft_isprint(int s)
 {
-		if (s >= 32 && s <= 127)
-				return (1);
-		else
+		if (!(s >= 32 && s < 127))
 			return (0);
+		else
+			return (1);
 }
 int main()
 {

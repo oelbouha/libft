@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_itoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:48:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:48:48 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/01 12:36:37 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/01 16:19:55 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stdio.h>
-char *	ft_strrchr(const char *s, int c)
+char *ft_itoa(int n)
 {
-	int	i;
+	unsigned int	nb;
+	unsigned int	i;
+	char 			*str[12];
 
-	i = 0;
-	while(s[i])
-		i++;
-	i--;
-	while(i >= 0)
+	if (n < 0)
 	{
-	   if (s[i] == c)
-		   return ((char*)&s[i]);
+		str[0] = '-';
+		nb = n * -1;
+	}
+	else 
+		nb = n;
+	i = 11;
+	while (nb / 10)
+	{
+		str[i] = nb % 10 + 48;
+		nb = nb / 10;
 		i--;
 	}
-	return(NULL);
+	str[i] = nb % 10 +  48;
+	return (new_str);
 }
 int main(void)
 {
-	char str[100] = "wwwhellohiii";
-	printf("%s", ft_strrchr(str, 'h'));
-	return (0);
+	printf("%s", ft_itoa(100));
 }

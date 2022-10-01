@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:16:45 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/28 15:17:20 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:43:58 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:44:26 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int s)
 {
-	if (s >= 0 && s <= 9)
-		return (1);
-	else
+	if (!(s >= 0 && s <= 9))
 		return (0);
+	else
+		return (1);
 }
 int main()
 {

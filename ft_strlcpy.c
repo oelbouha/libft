@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:21:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/29 12:28:34 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:51:20 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:51:30 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+
+
+char	*ft_strlcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (src[i] && i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-	i++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (0);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
 #include <stdio.h>
-int main(int c, char **v)
+int main()
 {
-	printf("%d", ft_strncmp(v[1], v[2], 5));
+	char dst[10] = "hi";
+	char src[20] = "hello";
+	printf("%s", ft_strlcpy(dst, src, 9));
 	return (0);
 }

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:18:05 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/28 15:21:37 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:48:15 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:48:16 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 int	ft_strlen(const char *str)
 {

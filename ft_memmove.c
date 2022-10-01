@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:48:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:48:48 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 17:18:05 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 18:12:58 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-char *	ft_strrchr(const char *s, int c)
-{
-	int	i;
+#include <string.h>
 
-	i = 0;
-	while(s[i])
-		i++;
-	i--;
-	while(i >= 0)
+void *ft_memmove(void *str1, const void *str2, size_t n)
+{
+	char	*dst;
+	char	*src;
+
+	dst = (char *)str1;
+	src = (char *)str2;
+
+	if (src < dst)
 	{
-	   if (s[i] == c)
-		   return ((char*)&s[i]);
-		i--;
+		while (n--)
+			dst[n] = src[n];
 	}
-	return(NULL);
+	else 
+	{
+		while (n--)
+			dst[n] = src[n];
+	}
+	return (dst);
 }
 int main(void)
 {
-	char str[100] = "wwwhellohiii";
-	printf("%s", ft_strrchr(str, 'h'));
-	return (0);
+	char str[20] = "old string";
+	char str1[11] = "string";
+	char s[20] = "old string";
+	char s1[11] = "string";
+	printf("%s\n", ft_memmove(str + 2, str1, 5));
+	printf("%s", memmove(s + 2, s1, 5));
 }

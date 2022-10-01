@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:48:47 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:48:48 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:54:00 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:54:15 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
-char *	ft_strrchr(const char *s, int c)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while(s[i])
-		i++;
-	i--;
-	while(i >= 0)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-	   if (s[i] == c)
-		   return ((char*)&s[i]);
-		i--;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	i++;
 	}
-	return(NULL);
+	return (0);
 }
-int main(void)
+#include <stdio.h>
+int main(int c, char **v)
 {
-	char str[100] = "wwwhellohiii";
-	printf("%s", ft_strrchr(str, 'h'));
+	printf("%d", ft_strncmp(v[1], v[2], 5));
 	return (0);
 }

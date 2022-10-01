@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 16:03:37 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/28 16:19:02 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:46:27 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:46:40 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 #include <stdio.h>
 
 void *	ft_memset(void *b, int c, size_t len)

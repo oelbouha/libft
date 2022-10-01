@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 11:19:27 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/29 13:22:30 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:47:06 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:47:10 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include <stdio.h>
 char *	ft_strchr(const char *s, int c)

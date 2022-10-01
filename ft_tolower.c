@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 11:11:20 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/29 11:13:34 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:49:12 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:49:14 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 #include <stdio.h>
 
 int	ft_tolower(int s)

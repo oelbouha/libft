@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oelbouha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 15:30:28 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/28 15:56:27 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/09/30 09:42:57 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/09/30 09:43:24 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
 int	ft_isascii(int s)
 {
-		if (s >= 0 && s <= 127)
-			return (1);
-		else
+		if (!(s >= 0 && s <= 127))
 			return (0);
+		else
+			return (1);
 }
 int main()
 {
