@@ -14,20 +14,20 @@
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub_str;
+	char				*sub_str;
 	unsigned int		i;
 	unsigned int		s_len;
 
-	s_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
-	if (start > s_len)
-		 return (0);
-	sub_str = malloc (len - start + 1);
+	s_len = ft_strlen(s);
+	sub_str = malloc (len  + 1);
+	if (start >= s_len)
+		 	return (sub_str);
 	if (!sub_str)
 		return (NULL);
 	i = 0;
-	while (start < len)
+	while (i < len)
 	{
 		sub_str[i] = s[start];
 		start++;
@@ -38,5 +38,5 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 }
 // int main(int c, char **v)
 // {
-// 	printf("%s", ft_substr(v[1], 30, 10));
+// 	printf("%s", ft_substr(v[1], 5, 20));
 // }

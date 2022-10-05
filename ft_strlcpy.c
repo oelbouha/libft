@@ -15,21 +15,27 @@ size_t	ft_strlcpy(char *dest, char *src, size_t n)
 {
 	size_t	i;
 	size_t	j;
-
-	j = ft_strlen(src);
+	
 	i = 0;
-	while (src[i] && i < n)
+	j = ft_strlen(src);
+	if (n > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[i]  && i < (n - 1)) 
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
 	return (j);
 }
-/*
-int main()
-{
-	char dst[20] ;
-	char src[20] = "hello";
-	printf("%zu", ft_strlcpy(dst, src, 9));
-	return (0);
-}*/
+
+// int main(int c, char **v)
+// {
+// 	char dst[20] ;
+// 	char src[20] = "hello";
+// 	printf("%zu\n", ft_strlcpy(v[1], v[2], 9));
+// 	printf("%zu", strlcpy(v[3], v[4], 9));
+
+// 	return (0);
+// }
