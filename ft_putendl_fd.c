@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:45:57 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/04 11:44:55 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/03 16:02:23 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/04 16:44:54 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void * ft_memcpy(void * dst, const void * src, size_t n)
+void	ft_putendl_fd(char *str, int fd)
 {
-	unsigned char	*dest;
-	unsigned char	*source;
+	int	i;
 
-	if (dst == 0 && src == 0)
-		return (0); 
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	while(n > 0)
+	i = 0;
+	if (str)
 	{
-		*dest = *source;
-		dest++;
-		source++;
-		n--;
+		while(str[i])
+		{
+			write(fd, &str[i], 1);
+			i++;
+		}
 	}
-	return (dst);
+	write(fd, "\n", 2);
 }
 // int main(int c, char **v)
 // {
-// 	printf("%s\n", ft_memcpy(v[1], v[2], 10));
-// 	printf("%s", memcpy(v[3], v[4], 10));
+// 	int fd = open("putstr.h", O_RDWR | O_CREAT);
+// 	ft_putend_fd(v[1], fd);
+// 	close(fd);
 // }

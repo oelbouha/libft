@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:45:57 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/04 11:44:55 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/03 16:06:25 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/04 10:07:31 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void * ft_memcpy(void * dst, const void * src, size_t n)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	unsigned char	*dest;
-	unsigned char	*source;
+	unsigned int	i;
+	unsigned int	n;
+	int				sign;
+	char			str[12];
 
-	if (dst == 0 && src == 0)
-		return (0); 
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	while(n > 0)
+	sign = -1;
+	if (nb < 0)
 	{
-		*dest = *source;
-		dest++;
-		source++;
-		n--;
+		write(fd, "-", 1);
+		n = nb * sign;
 	}
-	return (dst);
+	else
+		n = nb;
+	i = 10;
+	while (n / 10)
+	{
+		str[i] = n % 10 + 48;
+		n = n / 10;
+	i--;
+	}
+	str[i] = n % 10 + 48;
+	write (fd, &str[i], 11 - i);
 }
-// int main(int c, char **v)
-// {
-// 	printf("%s\n", ft_memcpy(v[1], v[2], 10));
-// 	printf("%s", memcpy(v[3], v[4], 10));
-// }
+//  int main(void)
+//  {
+//  	int fd = open("nbr.h", O_RDWR | O_CREAT);
+//  	ft_putnbr_fd(-100 ,fd);
+//  	close(fd);
+//  }

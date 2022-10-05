@@ -34,8 +34,3 @@ int	ft_atoi(char *str)
 	}
 	return (res * sign);
 }
-#include <stdio.h>
-int main(void)
-{
-	printf("%d", ft_atoi("-121sd"));
-}

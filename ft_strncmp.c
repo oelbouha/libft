@@ -6,26 +6,21 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:54:00 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:54:15 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:31:07 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while ((s1[i] || s2[i]) && i < n)
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
 	i++;
 	}
-	return (0);
-}
-#include <stdio.h>
-int main(int c, char **v)
-{
-	printf("%d", ft_strncmp(v[1], v[2], 5));
 	return (0);
 }

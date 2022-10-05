@@ -6,21 +6,16 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:44:53 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:59:23 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:54:42 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isprint(int s)
 {
-		if (!(s >= 32 && s < 127))
-			return (0);
-		else
-			return (1);
-}
-int main()
-{
-	printf("%d", ft_isprint('4'));
+	if (!(s >= 32 && s < 127))
+		return (0);
+	else
+		return (1);
 }

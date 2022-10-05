@@ -6,11 +6,11 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:49:41 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 17:41:45 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/04 11:21:27 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_toupper(int s)
 {
@@ -19,7 +19,8 @@ int	ft_toupper(int s)
 		else 
 			return (s - 32);
 }
-int main()
-{
-	printf("%c", ft_toupper('h'));
-}
+// int main(void)
+// {
+// 	printf("%c", ft_toupper('g'));
+// }
+

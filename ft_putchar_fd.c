@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:45:57 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/04 11:44:55 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/02 19:06:52 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/03 15:43:51 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void * ft_memcpy(void * dst, const void * src, size_t n)
+void ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*dest;
-	unsigned char	*source;
-
-	if (dst == 0 && src == 0)
-		return (0); 
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	while(n > 0)
-	{
-		*dest = *source;
-		dest++;
-		source++;
-		n--;
-	}
-	return (dst);
+	write(fd, &c, 1);
 }
-// int main(int c, char **v)
+// int main (void)
 // {
-// 	printf("%s\n", ft_memcpy(v[1], v[2], 10));
-// 	printf("%s", memcpy(v[3], v[4], 10));
+// 	int fd = open ("file4.h",  O_RDWR | O_CREAT);
+// 	 ft_putchar_fd('c', fd);
+// 	close(fd);
 // }

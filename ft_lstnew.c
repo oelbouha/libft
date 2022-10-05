@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 12:36:37 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/01 16:19:55 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/04 09:47:13 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/04 09:57:45 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h" 
 
-#include "libft.h"
-
-char *ft_itoa(int n)
+t_list *ft_lstnew(void *content)
 {
-	unsigned int	nb;
-	unsigned int	i;
-	char 			*str[12];
+	t_list	*newlst;
 
-	if (n < 0)
-	{
-		str[0] = '-';
-		nb = n * -1;
-	}
-	else 
-		nb = n;
-	i = 11;
-	while (nb / 10)
-	{
-		str[i] = nb % 10 + 48;
-		nb = nb / 10;
-		i--;
-	}
-	str[i] = nb % 10 +  48;
-	return (new_str);
+	newlst = malloc(sizeof(t_list));
+	if (!newlst)
+		return (NULL);
+	newlst->content = content;
+	newlst->next = NULL;
+	return (newlst);
 }
-int main(void)
-{
-	printf("%s", ft_itoa(100));
-}
+// int main(void)
+// {
+//     int i = 10;
+// 	//char *str[10] = "hello";
+//     t_list *new = ft_lstnew(&i);
+//     printf("%d" , *((int *)new->content));
+// }

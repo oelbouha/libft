@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 09:45:57 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/04 11:44:55 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/03 09:41:11 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/03 12:41:16 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void * ft_memcpy(void * dst, const void * src, size_t n)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*dest;
-	unsigned char	*source;
+	unsigned int	i;
+	unsigned int	len;
+	char			*str;
 
-	if (dst == 0 && src == 0)
-		return (0); 
-	dest = (unsigned char *)dst;
-	source = (unsigned char *)src;
-	while(n > 0)
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s) + 1;
+	str = malloc(len * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		*dest = *source;
-		dest++;
-		source++;
-		n--;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	return (dst);
+	str[i] = '\0';
+	return (str);
 }
+
 // int main(int c, char **v)
 // {
-// 	printf("%s\n", ft_memcpy(v[1], v[2], 10));
-// 	printf("%s", memcpy(v[3], v[4], 10));
+// 	char *str;
+// 	str = ft_strmapi(v[1], do_something);
+// 	printf("%s", str);
 // }
+

@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-char *	ft_strnstr(const char *big, const char *little, size_t len)
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	if (little == 0)
 		return ((char*)big);
@@ -31,7 +30,7 @@ char *	ft_strnstr(const char *big, const char *little, size_t len)
 		i++;
 	}
 	return (NULL);
-}
+}/*
 int main (int c, char **v)
 {
 	if (c == 3)
@@ -39,4 +38,4 @@ int main (int c, char **v)
 	printf("%s\n", ft_strnstr(v[1], v[2], 10));
 	return 0;
 	}
-}
+}*/

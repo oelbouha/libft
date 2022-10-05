@@ -6,26 +6,17 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:52:18 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:52:41 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:47:05 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	i++;
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	src_len;
-	unsigned int	dest_len;
+	size_t		i;
+	size_t		j;
+	size_t		src_len;
+	size_t		dest_len;
 
 	src_len = ft_strlen(src);
 	dest_len = ft_strlen(dest);
@@ -33,7 +24,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	j = 0;
 	if (size == 0)
 		return (src_len);
-	while (src[j] != '\0' && i < size -1)
+	while (src[j] && i < size -1)
 	{
 		dest[i] = src[j];
 		i++;
@@ -47,6 +38,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	else
 		return (dest_len + src_len);
 }
+/*
 #include <stdio.h>
 #include <string.h>
 int main(void)
@@ -59,7 +51,7 @@ int main(void)
 	//printf("%s\n", dst);
 	//printf("%d\n", ft_strlcat(dst, src, 2));
 	//printf("%s\n", dst);
-	printf("%d\n", ft_strlcat(dst, src, 4));
+	printf("%zu\n", ft_strlcat(dst, src, 4));
 	printf("%lu\n", strlcat(d, s, 4));
 	printf("%s", dst);
-}
+}*/

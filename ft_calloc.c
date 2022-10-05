@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t items, size_t size)
 {
-	char	*ptr;
-	int		i;
+	char		*ptr;
+	size_t		i;
 	
 	ptr = malloc (items * size);
 	if (!ptr)
@@ -29,7 +28,7 @@ void	*ft_calloc(size_t items, size_t size)
 	 }	   
 	 return ((void *)ptr);
 }
-int main(void)
-{
-	ft_calloc(3, sizeof(int));
-}
+// int main(void)
+// {
+// 	ft_calloc(3, sizeof(int));
+// }
