@@ -6,17 +6,17 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:43:24 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/05 12:47:37 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:17:45 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    new->next = *lst;
-    *lst = new;
-} 
+	new->next = *lst;
+	*lst = new;
+}
 // int main (void)
 // {
 //     t_list *lst;

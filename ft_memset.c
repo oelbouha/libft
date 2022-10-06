@@ -6,21 +6,19 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:46:27 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/09/30 09:46:40 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:50:30 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 #include "libft.h"
 
-void *	ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t		i;
+	char		*str;
 
-	str = (unsigned char *)b;
+	str = (char *)b;
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{
 		str[i] = c;
 		i++;
@@ -31,4 +29,3 @@ void *	ft_memset(void *b, int c, size_t len)
 // {
 // 	printf("%s", ft_memset(v[1], 'h', 10));
 // }
-

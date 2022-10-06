@@ -14,41 +14,33 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*New_str;
+	char	*new_str;
 	int		i;
 	int		j;
-	int		size;
 
 	if (!s1 || !s2)
 		return (0);
-	i = strlen(s1);
-	j = strlen(s2);
-	size = i + j + 1;
-	New_str = malloc (size * sizeof(char));
-	if (!New_str)
+	new_str = malloc ((ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new_str)
 		return (NULL);
 	i = 0;
-	while(s1[i])
+	while (s1[i])
 	{
-		New_str[i] = s1[i];
+		new_str[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while(s2[j])
+	while (s2[j])
 	{
-		New_str[i] = s2[j];
+		new_str[i] = s2[j];
 		i++;
 		j++;
 	}
-	New_str[i] = '\0';
-	return (New_str);
+	new_str[i] = '\0';
+	return (new_str);
 }
 // int main (int c, char **v)
 // {
 // 	printf("%s", ft_strjoin(v[1], v[2]));
 // 	return 0;
 // }
-		
-		
-
-

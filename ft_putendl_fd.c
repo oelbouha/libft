@@ -19,7 +19,7 @@ void	ft_putendl_fd(char *str, int fd)
 	i = 0;
 	if (str)
 	{
-		while(str[i])
+		while (str[i])
 		{
 			write(fd, &str[i], 1);
 			i++;

@@ -6,25 +6,24 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:02:19 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/05 16:03:30 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:16:38 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    if (*lst)
-    {
-        while((*lst)->next != NULL)
-            *lst = (*lst)->next;
-        (*lst)->next = new;
-        new->next = NULL;
-    }
-    else 
-        *lst = new;
-        new->next = NULL;
-    
+	if (*lst)
+	{
+		while ((*lst)->next != NULL)
+			*lst = (*lst)->next;
+		(*lst)->next = new;
+		new->next = NULL;
+	}
+	else
+		*lst = new;
+		new->next = NULL;
 }
 // int main(void)
 // {

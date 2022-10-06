@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int i, char *c))
+void	ft_striteri(char *s, void (*f)(unsigned int i, char *c))
 {
 	unsigned int	i;
 
@@ -31,4 +31,3 @@ void ft_striteri(char *s, void (*f)(unsigned int i, char *c))
 // {
 // 	ft_striteri(v[1], do_something);
 // }
-

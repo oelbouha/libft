@@ -30,8 +30,8 @@ static int intlen(int n)
 
 char * ft_itoa(int n)
 {
-	unsigned int	i;
-	unsigned int	len;
+	int				i;
+	int				len;
 	unsigned int	nb;
 	char			*str;
 	
@@ -56,10 +56,9 @@ char * ft_itoa(int n)
 		i--;
 	}
 	str[len] = '\0';
-	return (str);
-			
+	return (str);			
 }
-// int main()
-// {
-// 	printf("%s", ft_itoa(-1000));
-// }
+int main()
+{
+	printf("%s", ft_itoa(-1000));
+}
