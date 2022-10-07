@@ -37,17 +37,15 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		k;
 	int		j;
-	int		size;
 
 	if (!s)
 		return (NULL);
-	size = ft_count(s, c);
-	strings = (char **)malloc ((size + 1) * sizeof(char *))
-		if (!strings)
+	strings = (char **)malloc ((ft_count(s, c) + 1) * sizeof(char *));
+	if (!strings)
 		return (NULL);
 	i = 0;
-	k = 0;
-	while (k < size)
+	k = -1;
+	while (++k < ft_count(s, c))
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -58,7 +56,6 @@ char	**ft_split(char const *s, char c)
 			j++;
 		}
 		strings[k] = ft_substr(s, i - j, j);
-	k++;
 	}
 	strings[k] = NULL;
 	return (strings);

@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 17:18:05 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/06 19:47:54 by oelbouha         ###   ########.fr       */
+/*   Created: 2022/10/07 18:02:57 by oelbouha          #+#    #+#             */
+/*   Updated: 2022/10/07 18:06:53 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	*ft_memmove(void *str1, const void *str2, size_t n)
+void    ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*dst;
-	char	*src;
-
-	if (str1 == 0 && str2 == 0)
-		return (0);
-	dst = (char *)str1;
-	src = (char *)str2;
-	if (src < dst)
-	{
-		while (n > 0)
-		{
-			dst[n - 1] = src[n - 1];
-			n--;
-		}
-	}
-	else
-		ft_memcpy(str1, str2, n);
-	return (dst);
+    if (lst && del)
+    {
+        del(lst->content);
+            free(lst) ;
+    }
 }
-// int main ()
+// void    do_something(void *ptr)
 // {
-// 	char s1[] = "123456789"; 
-// 	printf("%s", ft_memmove(s1 +4 , s1, 5 ));
-// 	return 0;
+//     free(ptr);
+// }
+// int main(void)
+// {
+//     t_list *node1;
+//     char *str = strdup("hello");
+//     node1 = ft_lstnew(str);
+//     ft_lstdelone(node1, do_something);
 // }

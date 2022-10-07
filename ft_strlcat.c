@@ -15,15 +15,13 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t		i;
 	size_t		j;
-	size_t		src_len;
 	size_t		dest_len;
 
-	src_len = ft_strlen(src);
+	if (size == 0)
+		return (ft_strlen(src));
 	dest_len = ft_strlen(dest);
 	i = ft_strlen(dest);
 	j = 0;
-	if (size == 0)
-		return (src_len);
 	while (src[j] && i < size -1)
 	{
 		dest[i] = src[j];
@@ -33,25 +31,20 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[i] = '\0';
 	if (size < dest_len)
 	{
-		return (src_len + size);
+		return (ft_strlen(src) + size);
 	}
 	else
-		return (dest_len + src_len);
+		return (dest_len + ft_strlen(src));
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-	char dst[10] = "hi";
-	char src[10] = "hello";
-	char d[10] = "hi";
-	char s[10] = "hello";
-	//printf("%d\n", ft_strlcat(dst, src, 5));
-	//printf("%s\n", dst);
-	//printf("%d\n", ft_strlcat(dst, src, 2));
-	//printf("%s\n", dst);
-	printf("%zu\n", ft_strlcat(dst, src, 4));
-	printf("%lu\n", strlcat(d, s, 4));
-	printf("%s", dst);
-}*/
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	// char dst[10] = "hi";
+// 	// char src[10] = "hello";
+// 	// char d[10] = "hi";
+// 	// char s[10] = "hello";
+// 	printf("%zu\n", ft_strlcat((void *)0 ,"ryan !", 0));
+// 	//printf("%lu\n", strlcat((void *)0,"ryan !", 0));
+// 	//printf("%s", dst);
+// }
