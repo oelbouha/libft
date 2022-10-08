@@ -35,7 +35,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 	int		i;
-	int		k;
+	int		x;
 	int		j;
 
 	if (!s)
@@ -44,8 +44,8 @@ char	**ft_split(char const *s, char c)
 	if (!strings)
 		return (NULL);
 	i = 0;
-	k = -1;
-	while (++k < ft_count(s, c))
+	x = -1;
+	while (++x < ft_count(s, c))
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -55,15 +55,15 @@ char	**ft_split(char const *s, char c)
 			i++;
 			j++;
 		}
-		strings[k] = ft_substr(s, i - j, j);
+		strings[x] = ft_substr(s, i - j, j);
 	}
-	strings[k] = NULL;
+	strings[x] = NULL;
 	return (strings);
 }
-// int main()
+// int main(void)
 // {
 // 	char **arr;
-// 	arr = ft_split("split  ||this|for|me|", '|');
+// 	arr = ft_split("*****hello", '*');
 // 	int i = 0;
 // 	while (arr[i])
 // 	{

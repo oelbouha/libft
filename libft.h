@@ -6,30 +6,28 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:31:31 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/04 11:31:37 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/08 20:34:23 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 typedef struct s_list
 {
-void  *content;
-struct s_list *next;
+	void			*content;
+	struct s_list	*next;
 } t_list;
 
-int             ft_tolower(int s);
-int             ft_toupper(int s);
-int			    ft_isascii(int s);
-int				ft_isalpha(int s);
-int				ft_isalnum(int s);
-int				ft_isdigit(int s);
+int			ft_tolower(int s);
+int			ft_toupper(int s);
+int			ft_isascii(int s);
+int			ft_isalpha(int s);
+int			ft_isalnum(int s);
+int			ft_isdigit(int s);
 int				ft_isprint(int s);
 int             ft_strncmp(char *s1, char *s2, size_t n);
 int	            ft_memcmp(const void *str1, const void *str2, size_t n);

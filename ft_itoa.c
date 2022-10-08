@@ -13,16 +13,22 @@
 
 static int	ft_intlen(int n)
 {
-	int	i;
+	int				i;
+	unsigned int	nb;
 
 	i = 0;
 	if (n == 0)
 		i = 1;
 	if (n < 0)
-		i = 1;
-	while (n > 0)
 	{
-		n = n / 10;
+		i = 1;
+		nb = n * -1;
+	}
+	else
+		nb = n;
+	while (nb > 0)
+	{
+		nb = nb / 10;
 		i++;
 	}
 	return (i);
@@ -34,7 +40,7 @@ char	*ft_itoa(int n)
 	unsigned int	nb;
 	char			*str;
 
-	str = malloc(sizeof(char) * ft_intlen(n) + 1);
+	str = malloc((ft_intlen(n) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	if (n < 0)
@@ -56,7 +62,3 @@ char	*ft_itoa(int n)
 	str[ft_intlen(n)] = '\0';
 	return (str);
 }
-// int main()
-// {
-// 	printf("%s", ft_itoa(-1000));
-// }
