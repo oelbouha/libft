@@ -26,11 +26,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int i, char *c))
 		}
 	}
 }
-// void	do_something(unsigned int i, char *s)
-// {
-// 	return ('s');
-// }
-// int main(int c, char **v)
-// {
-// 	ft_striteri(v[1], do_something);
-// }

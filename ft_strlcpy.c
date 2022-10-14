@@ -29,13 +29,3 @@ size_t	ft_strlcpy(char *dest, char *src, size_t n)
 	}
 	return (j);
 }
-
-// int main(int c, char **v)
-// {
-// 	char dst[20] ;
-// 	char src[20] = "hello";
-// 	printf("%zu\n", ft_strlcpy(v[1], v[2], 9));
-// 	printf("%zu", strlcpy(v[3], v[4], 9));
-
-// 	return (0);
-// }

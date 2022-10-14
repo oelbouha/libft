@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:22:27 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/07 20:43:19 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/14 18:26:28 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	sub_str = malloc (len + 1);
 	if (start >= s_len)
+	{
+		sub_str = malloc(1);
+		sub_str[0] = '\0';
 		return (sub_str);
+	}
+	sub_str = malloc (len + 1);
 	if (!sub_str)
 		return (NULL);
 	i = 0;
@@ -36,7 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub_str[i] = '\0';
 	return (sub_str);
 }
-// int main(int c, char **v)
-// {
-// 	printf("%s", ft_substr(v[1], 5, 20));
-// }

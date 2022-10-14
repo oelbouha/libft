@@ -5,7 +5,6 @@ CC := cc
 
 FLAGS := -Wall -Wextra -Werror
 
-
 SRC :=	ft_atoi.c	\
 		ft_bzero.c	\
 		ft_calloc.c	\
@@ -14,11 +13,11 @@ SRC :=	ft_atoi.c	\
 		ft_isascii.c \
 		ft_isdigit.c \
 		ft_isprint.c \
-		ft_itoa.c  \
+		ft_itoa.c \
 		ft_memchr.c \
+		ft_memmove.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
-		ft_memmove.c \
 		ft_memset.c \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
@@ -51,23 +50,24 @@ BONUS = ft_lstnew.c \
 OBJBONUS := $(BONUS:.c=.o)
 
 OBJ := $(SRC:.c=.o)
-
-$(NAME) : $(OBJ)
-		ar -rcs $(NAME) $(OBJ)
+RM = rm -f
 
 all: $(NAME)
 
 %.o:%.c 
 	gcc $(FLAGS) -c $< -o $@
 
+$(NAME) : $(OBJ)
+		ar -rcs $(NAME) $(OBJ)
+
 bonus :$(OBJBONUS) $(OBJ)
 		ar -rcs $(NAME) $(OBJBONUS)
 
-clean:
-	rm *.o
+clean: 
+	${RM} ${OBJ} ${OBJBONUS}
 
 fclean: clean
-	rm $(NAME)
+	${RM} $(NAME)
 
 re: fclean all
 

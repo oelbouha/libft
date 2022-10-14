@@ -26,9 +26,3 @@ void	ft_putstr_fd(char *str, int fd)
 		}
 	}
 }
-// int main(int c, char **v)
-// {
-// 	int fd = open("putstr.h", O_RDWR | O_CREAT);
-// 	ft_putstr_fd(v[1], fd);
-// 	close(fd);
-// }

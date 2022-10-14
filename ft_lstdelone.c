@@ -19,14 +19,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		free(lst);
 	}
 }
-// void    do_something(void *ptr)
-// {
-//     free(ptr);
-// }
-// int main(void)
-// {
-//     t_list *node1;
-//     char *str = strdup("hello");
-//     node1 = ft_lstnew(str);
-//     ft_lstdelone(node1, do_something);
-// }

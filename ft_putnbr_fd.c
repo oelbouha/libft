@@ -37,9 +37,3 @@ void	ft_putnbr_fd(int nb, int fd)
 	str[i] = n % 10 + 48;
 	write (fd, &str[i], 11 - i);
 }
-//  int main(void)
-//  {
-//  	int fd = open("nbr.h", O_RDWR | O_CREAT);
-//  	ft_putnbr_fd(-100 ,fd);
-//  	close(fd);
-//  }

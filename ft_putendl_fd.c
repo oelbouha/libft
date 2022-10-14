@@ -14,22 +14,9 @@
 
 void	ft_putendl_fd(char *str, int fd)
 {
-	int	i;
-
-	i = 0;
 	if (str)
 	{
-		while (str[i])
-		{
-			write(fd, &str[i], 1);
-			i++;
-		}
+		ft_putstr_fd(str, fd);
+		ft_putchar_fd('\n', fd);
 	}
-	write(fd, "\n", 2);
 }
-// int main(int c, char **v)
-// {
-// 	int fd = open("putstr.h", O_RDWR | O_CREAT);
-// 	ft_putend_fd(v[1], fd);
-// 	close(fd);
-// }

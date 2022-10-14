@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (0);
-	s1_len = strlen(s1);
+	s1_len = ft_strlen(s1);
 	i = 0;
 	while (s1_len-- && (ft_strchr(set, *s1)))
 		s1++;
@@ -33,9 +33,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, 0, str_len);
 	return (str);
 }
-// int main() {
-//     char v1[40] = "hhhhhHello \t  Please\n Trim me !hhhh";
-//     char v2[20] = "h";
-//     printf("%s", ft_strtrim(v1, v2));
-//     return 0;
-// }

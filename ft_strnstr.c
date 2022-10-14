@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (len == 0 || *little == 0)
+	if (*little == 0)
 		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len)
@@ -31,12 +31,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-// int main ()
-// {
-// 	char *s1 = "MZIRIBMZIRIBMZE123";
-// //	char *s2 = "MZIRIBMZE";
-// 	size_t max = strlen(s1) + 1;
-// 	printf("%s\n", ft_strnstr(s1, s1, max));
-// 	printf("%s\n", strnstr(s1, s1, max));
-// 	return 0;
-// }

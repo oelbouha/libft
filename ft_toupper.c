@@ -19,7 +19,3 @@ int	ft_toupper(int s)
 	else
 		return (s - 32);
 }
-// int main(void)
-// {
-// 	printf("%c", ft_toupper('g'));
-// }
