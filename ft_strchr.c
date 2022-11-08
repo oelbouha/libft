@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 09:47:06 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/03 18:38:05 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/22 19:41:26 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,9 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == c)
 		return ((char *)&s[i]);
 	return (NULL);
+}
+#include <stdio.h>
+int main()
+{
+	printf("%s", ft_strchr("hello\0hello", '\0'));
 }

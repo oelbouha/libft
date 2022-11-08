@@ -55,7 +55,7 @@ RM = rm -f
 all: $(NAME)
 
 %.o:%.c 
-	gcc $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
 		ar -rcs $(NAME) $(OBJ)

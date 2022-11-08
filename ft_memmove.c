@@ -6,7 +6,7 @@
 /*   By: oelbouha <oelbouha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 17:18:05 by oelbouha          #+#    #+#             */
-/*   Updated: 2022/10/14 18:25:27 by oelbouha         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:04:20 by oelbouha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,10 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	return (dst);
+}
+#include <stdio.h>
+int main(void)
+{
+	char str[15] = "hellofuture13";
+	printf("%s", ft_memmove(str + 4, str + 1, 4));
 }
